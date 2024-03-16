@@ -1,7 +1,5 @@
 package com.example.demo.service;
 
-import com.example.demo.dto.ProductDto;
-import com.example.demo.models.Product;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,12 +13,12 @@ public class MapService {
     this.modelMapper = modelMapper;
   }
 
-  public Product map(ProductDto dto, Class<Product> productClass) {
-    return modelMapper.map(dto, productClass);
+  public <D> D entityToDto(Object entity, Class<D> dtoClass) {
+    return modelMapper.map(entity, dtoClass);
   }
 
-  public ProductDto map(Product product, Class<ProductDto> productDtoClass) {
-    return modelMapper.map(product, productDtoClass);
+  public <T> T dtoToEntity(Object dto, Class<T> entityClass) {
+    return modelMapper.map(dto, entityClass);
   }
 
 }
