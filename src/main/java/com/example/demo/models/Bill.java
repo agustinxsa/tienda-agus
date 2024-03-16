@@ -14,6 +14,10 @@ public class Bill {
         this.products = new ArrayList<>();
     }
 
+    public Bill() {
+        this.products = new ArrayList<>();
+    }
+
     public long getId() {
         return id;
     }

@@ -19,6 +19,7 @@ public class BillRepository {
     }
 
     public Bill save(Bill bill) {
+        //si le paso id en el body se pueden genera duplicados???
         if (bill.getId() == 0) {
             bill.setId(nextId++);
         }

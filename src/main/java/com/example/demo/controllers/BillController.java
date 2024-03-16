@@ -19,7 +19,7 @@ public class BillController {
         this.billService = billService;
     }
 
-    @PostMapping("/")
+    @PostMapping("/new-bill")
     public ResponseEntity<BillDto> createBill(@RequestBody BillDto billDto ) {
         return ResponseEntity.ok(billService.createBill(billDto));
     }
